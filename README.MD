@@ -1,6 +1,6 @@
 # XKCD NOW
 
-Fully client side version of [http://xkcd.com/now/](http://xkcd.com/now)
+Fully client side version of [http://xkcd.com/now/](http://xkcd.com/now).
 
 view it [here](https://github.com/meandavejustice/xkcd-now).
 
