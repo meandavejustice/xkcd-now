@@ -1,10 +1,13 @@
 var world = document.querySelector('.world');
-var chunk = 4.16; // hours in a day divided by 100 for a rough estimate for rotate degree
+var chunk = 15; // 360 / hours in day
 var prefixes = ['webkitTransform', 'MozTransform', 'msTransform', 'OTransform', 'transform'];
 
 function updateMap() {
-  var rotInt = parseInt(moment().tz('America/Los_Angeles').format('HH'), 10);
-  var rotString = 'rotate(' + chunk * rotInt + 'deg)';
+  var hour = moment().tz('America/Los_Angeles').format('HH');
+  var min = parseInt(moment().tz('America/Los_Angeles').format('mm'), 10) / 60;
+  min = parseInt(min * 100, 10)
+  var rotFloat = hour+'.'+min;
+  var rotString = 'rotate(' + chunk * rotFloat + 'deg)';
   prefixes.forEach(function(el) {
     world.style[el] = rotString;
   });
